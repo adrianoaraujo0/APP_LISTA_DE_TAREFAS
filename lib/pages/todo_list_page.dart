@@ -11,12 +11,15 @@ class TodoListPage extends StatelessWidget {
           child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: TextField(
-            decoration: InputDecoration(
-          labelText: "Email",
-          hintText: "Email@exemplo.com",
-          hintStyle: TextStyle(fontSize: 14)
-          // border: InputBorder.none
-        )),
+          decoration: InputDecoration(
+            labelText: "Email",
+            hintText: "Email@exemplo.com",
+            hintStyle: TextStyle(fontSize: 14),
+
+            // border: InputBorder.none
+          ),
+          keyboardType: TextInputType.emailAddress,
+        ),
       )),
     );
   }
