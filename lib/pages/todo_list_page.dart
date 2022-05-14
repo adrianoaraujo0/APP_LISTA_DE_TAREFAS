@@ -6,8 +6,18 @@ class TodoListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.blue,
+    return Scaffold(
+      body: Center(
+          child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: TextField(
+            decoration: InputDecoration(
+          labelText: "Email",
+          hintText: "Email@exemplo.com",
+          hintStyle: TextStyle(fontSize: 14)
+          // border: InputBorder.none
+        )),
+      )),
     );
   }
 }
