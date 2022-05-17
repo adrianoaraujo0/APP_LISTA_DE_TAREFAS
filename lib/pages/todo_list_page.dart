@@ -2,25 +2,42 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class TodoListPage extends StatelessWidget {
-  const TodoListPage({Key? key}) : super(key: key);
+  TodoListPage({Key? key}) : super(key: key);
+
+  final TextEditingController emailController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-          child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: TextField(
-          decoration: InputDecoration(
-            labelText: "Email",
-            hintText: "Email@exemplo.com",
-            hintStyle: TextStyle(fontSize: 14),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Column(
+            children: [
+              TextField(
+                controller: emailController,
+                decoration: InputDecoration(
+                  labelText: "Email",
+                  hintText: "Email@exemplo.com",
+                  hintStyle: TextStyle(fontSize: 14),
 
-            // border: InputBorder.none
+                  // border: InputBorder.none
+                ),
+                keyboardType: TextInputType.emailAddress,
+              ),
+              ElevatedButton(
+                onPressed: login,
+                child: Text('Entrar'),
+              ),
+            ],
           ),
-          keyboardType: TextInputType.emailAddress,
         ),
-      )),
+      ),
     );
+  }
+
+  void login() {
+    String text = emailController.text;
+    print('$text');
   }
 }
