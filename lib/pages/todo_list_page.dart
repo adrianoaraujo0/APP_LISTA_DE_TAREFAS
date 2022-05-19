@@ -10,22 +10,25 @@ class TodoListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Row(
-          children: [
-            Expanded(
-              child: TextField(
-                decoration: InputDecoration(
-                  border: OutlineInputBorder(),
-                  labelText: "Adicione uma tarefa",
-                  hintText: "Ex: Estudar flutter",
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Row(
+            children: [
+              Expanded(
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: "Adicione uma tarefa",
+                    hintText: "Ex: Estudar flutter",
+                  ),
                 ),
               ),
-            ),
-            ElevatedButton(
-              onPressed: (){},
-              child: Text("+"),
-            ),
-          ],
+              ElevatedButton(
+                onPressed: () {},
+                child: Text("+"),
+              ),
+            ],
+          ),
         ),
       ),
     );
