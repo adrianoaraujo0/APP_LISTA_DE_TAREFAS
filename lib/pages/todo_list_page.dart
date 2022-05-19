@@ -12,30 +12,50 @@ class TodoListPage extends StatelessWidget {
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Row(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
             children: [
-              Expanded(
-                child: TextField(
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    labelText: "Adicione uma tarefa",
-                    hintText: "Ex: Estudar flutter",
+              Row(
+                children: [
+                  Expanded(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: "Adicione uma tarefa",
+                        hintText: "Ex: Estudar flutter",
+                      ),
+                    ),
                   ),
-                ),
+                  SizedBox(
+                    width: 8,
+                  ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: Color(0xff00d7f3),
+                      padding: EdgeInsets.all(14),
+                    ),
+                    onPressed: () {},
+                    child: Icon(
+                      Icons.add,
+                      size: 30,
+                    ),
+                  ),
+                ],
               ),
-              SizedBox(
-                width: 8,
-              ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  primary: Color(0xff00d7f3),
-                  padding: EdgeInsets.all(14),
-                ),
-                onPressed: () {},
-                child: Icon(
-                 Icons.add,
-                  size: 30,
-                ),
+              SizedBox(height: 16),
+              Row(
+                children: [
+                  Expanded(
+                    child: Text("Você tem 0 tarefas pendentes"),
+                  ),
+                  ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: Color(0xff00d7f3),
+                    ),
+                    onPressed: () {},
+                    child: Text("Limpar tudo"),
+                  ),
+                ],
               ),
             ],
           ),
