@@ -1,8 +1,8 @@
 class Todo {
 
-  Todo({ required this.title, required this.data});
+  Todo({ required this.title, required this.dateTime});
 
   String title;
-  DateTime data;
+  DateTime dateTime;
 
 }
