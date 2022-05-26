@@ -47,9 +47,9 @@ class _TodoListPageState extends State<TodoListPage> {
                         padding: EdgeInsets.all(14),
                       ),
                       onPressed: () {
-                        setState(() {
-
-                          String text = todoController.text;
+                        setState(
+                          () {
+                            String text = todoController.text;
                             Todo newTodo = Todo(
                               title: text,
                               dateTime: DateTime.now(),
@@ -74,6 +74,7 @@ class _TodoListPageState extends State<TodoListPage> {
                       for (Todo todo in todos)
                         TodoListItem(
                           todo: todo,
+                          onDelete: onDelete,
                         ),
                     ],
                   ),
@@ -99,5 +100,11 @@ class _TodoListPageState extends State<TodoListPage> {
         ),
       ),
     );
+  }
+
+  void onDelete(Todo todo) {
+    setState(() {
+      todos.remove(todo);
+    });
   }
 }
