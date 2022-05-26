@@ -106,5 +106,11 @@ class _TodoListPageState extends State<TodoListPage> {
     setState(() {
       todos.remove(todo);
     });
+
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text('A tarefa ${todo.title.toUpperCase()} foi removida'),
+      ),
+    );
   }
 }
